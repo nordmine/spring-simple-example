@@ -9,8 +9,12 @@ import java.util.List;
 @Service
 public class MainServiceImpl implements MainService {
 
-    @Autowired
     private List<Handler> handlers;
+
+    @Autowired
+    public MainServiceImpl(List<Handler> handlers) {
+        this.handlers = handlers;
+    }
 
     @Override
     public void doWork() {
